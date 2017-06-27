@@ -84,7 +84,13 @@ fun main(args: Array<String>) {
     for ((key, value) in map) {}
 
     val listOfNumber = listOf(1, 2, 3, 4)
+    listOfNumber.forEach { println(it) }
     val keyValue = mapOf(1 to "one", 2 to "two", 3 to "three")
+    for ((key, value) in keyValue) {
+        println("$key, $value")
+    }
+    // or
+    keyValue.forEach { key, value -> println("$key, $value") }
 
     val developers = listOf(Developer("John", 20), Developer("Lucy", 24))
     developers.forEach { println(it.name) }
@@ -116,12 +122,22 @@ fun main(args: Array<String>) {
     // in case you only want to copy selected properties
     val dev3 = dev.copy(age = 25)
 
+    var (name, age) = dev
+    println("$name, $age")
+
+    Util.getScore(5)
+
     fun Int.triple(): Int {
         return 3 * this
     }
 
     val result = 3.triple()
     val developer4: Developer
+
+    var list = listOf("java", "c++", "Android", "Kotlin", "iOS")
+    list.map { "Hello $it" }
+            .filter { !it.contains("c") }
+            .forEach { it }
 
 }
 

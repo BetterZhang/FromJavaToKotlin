@@ -95,7 +95,15 @@ public class JavaExample {
         List<String> collection = new ArrayList<>();
         for (String item : collection) {}
         Map<String, String> map = new HashMap<>();
-        for (Map.Entry<String, String> entry : map.entrySet()) {}
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ", " + entry.getValue());
+        }
+        // or
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> entry = iterator.next();
+            System.out.println(entry.getKey() + ", " + entry.getValue());
+        }
 
         final List<Integer> listOfNumber = Arrays.asList(1, 2, 3, 4);
         final Map<Integer, String> keyValue = new HashMap<Integer, String>();
@@ -135,9 +143,19 @@ public class JavaExample {
             e.printStackTrace();
         }
 
+        Util.getScore(5);
+
         int result = Util.triple(3);
 
         Developer developer4;
+
+        List<String> list = Arrays.asList("java", "c++", "Android", "Kotlin", "iOS");
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, "Hello " + list.get(i));
+            if (!list.get(i).contains("c")) {
+                System.out.println(list.get(i));
+            }
+        }
 
     }
 
