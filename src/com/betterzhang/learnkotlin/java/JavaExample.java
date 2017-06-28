@@ -178,13 +178,3 @@ public class JavaExample {
     }
 
 }
-
-class Util {
-    private Util() {}
-    public static int getScore(int value) {
-        return 2 * value;
-    }
-    public static int triple(int value) {
-        return 3 * value;
-    }
-}
