@@ -5,7 +5,7 @@ package com.betterzhang.learnkotlin.kotlin
  * Author : Andrew Zhang
  * Email  : betterzhang.dev@gmail.com
  * Time   : 2017/06/28 上午 10:50
- * Desc   : description
+ * Desc   : 静态与非静态内部类
  */
 class Outer {
 

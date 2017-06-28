@@ -5,7 +5,7 @@ package com.betterzhang.learnkotlin.java;
  * Author : Andrew Zhang
  * Email  : betterzhang.dev@gmail.com
  * Time   : 2017/06/28 下午 1:12
- * Desc   : description
+ * Desc   : 泛型
  */
 public final class Wrapper<T> {
 
