@@ -9,6 +9,13 @@ package com.betterzhang.learnkotlin.kotlin
  */
 
 class Lazy {
+
+    private var name1: String? = null
+    private var name2: String = ""
+
+    // lateinit是用来告诉编译器，name 这个变量后续会妥善处置的
+    private lateinit var name3: String
+
     companion object {
         val lazyValue: String by lazy {
             println("init")     // 第一次使用时才被初始化
