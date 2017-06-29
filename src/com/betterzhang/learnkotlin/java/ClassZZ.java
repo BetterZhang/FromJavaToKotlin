@@ -16,6 +16,7 @@ public class ClassZZ {
         ClassZZ c = new ClassZZ();
         Class<?> clazz2 = c.getClass();
         System.out.println(clazz2);
+        System.out.println(clazz2.getSimpleName());
     }
 
 }

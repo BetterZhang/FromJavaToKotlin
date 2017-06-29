@@ -19,6 +19,7 @@ class ClassZZ {
             val c = ClassZZ()
             val clazz2 = c.javaClass
             println(clazz2)
+            println(clazz2.simpleName)
         }
     }
 
