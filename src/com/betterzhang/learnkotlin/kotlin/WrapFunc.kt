@@ -8,14 +8,19 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : Kotlin泛型函数
  */
 
-fun main(args: Array<String>) {
-    val list = singletonList<String>("Kotlin", "Java")
-    for (item in list) {
-        println(item)
+class WrapFunc {
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val list = singletonList<String>("Kotlin", "Java")
+            for (item in list) {
+                println(item)
+            }
+        }
+
+        private fun <T> singletonList(item1: T, item2: T): List<T> {
+            return arrayListOf(item1, item2)
+        }
     }
 }
-
-fun <T> singletonList(item1: T, item2: T): List<T> {
-    return arrayListOf(item1, item2)
-}
-

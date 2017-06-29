@@ -8,21 +8,24 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : description
  */
 
-fun main(args: Array<String>) {
+class Lambda {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            Thread(Runnable {
+                println("Hello Kotlin")
+            }).start()
 
-    Thread(Runnable {
-        println("Hello Kotlin")
-    }).start()
+            // Kotlin Lambda 表达式语法
+            val sum = {x: Int, y: Int -> x + y}
+            val sum1: (Int, Int) -> Int = {x, y -> x + y}
+            val sum2 = fun(x: Int, y: Int): Int {
+                return x + y
+            }
 
-    // Kotlin Lambda 表达式语法
-    val sum = {x: Int, y: Int -> x + y}
-    val sum1: (Int, Int) -> Int = {x, y -> x + y}
-    val sum2 = fun(x: Int, y: Int): Int {
-        return x + y
+            println(sum(2, 8))
+            println(sum1(3, 9))
+            println(sum2(5, 12))
+        }
     }
-
-    println(sum(2, 8))
-    println(sum1(3, 9))
-    println(sum2(5, 12))
-
 }

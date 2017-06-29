@@ -8,9 +8,16 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : Kotlin嵌套函数
  */
 
-fun main(args: Array<String>) {
-    fun sayHello() {
-        println("Hello Kotlin")
+class Nested {
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            fun sayHello() {
+                println("Hello Kotlin")
+            }
+            sayHello()
+        }
     }
-    sayHello()
+
 }

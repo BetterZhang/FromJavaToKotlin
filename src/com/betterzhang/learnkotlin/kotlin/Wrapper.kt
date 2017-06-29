@@ -7,9 +7,14 @@ package com.betterzhang.learnkotlin.kotlin
  * Time   : 2017/06/28 下午 1:18
  * Desc   : 泛型
  */
-class Wrapper<T>(val item: T)
+class Wrapper<T>(val item: T) {
 
-fun main(args: Array<String>) {
-    var wrapper = Wrapper("Hello Kotlin")
-    println(wrapper.item)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            var wrapper = Wrapper("Hello Kotlin")
+            println(wrapper.item)
+        }
+    }
+
 }

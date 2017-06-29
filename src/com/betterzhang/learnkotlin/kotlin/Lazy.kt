@@ -8,12 +8,17 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : Kotlin懒加载
  */
 
-val lazyValue: String by lazy {
-    println("init")     // 第一次使用时才被初始化
-    "Hello Kotlin"
-}
+class Lazy {
+    companion object {
+        val lazyValue: String by lazy {
+            println("init")     // 第一次使用时才被初始化
+            "Hello Kotlin"
+        }
 
-fun main(args: Array<String>) {
-    println(lazyValue)
-    println(lazyValue)
+        @JvmStatic
+        fun main(args: Array<String>) {
+            println(lazyValue)
+            println(lazyValue)
+        }
+    }
 }

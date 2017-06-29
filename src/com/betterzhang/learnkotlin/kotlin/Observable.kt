@@ -9,15 +9,21 @@ import kotlin.properties.Delegates
  * Time   : 2017/06/28 下午 2:12
  * Desc   : Kotlin observable 观察者
  */
-class Person2 {
+class Observable {
+
     public var name: String by Delegates.observable("init...") {
         property, oldValue, newValue -> println("property: $property, oldValue: $oldValue, newValue: $newValue")
     }
-}
-fun main(args: Array<String>) {
-    val person = Person2()
-    println(person.name)
 
-    person.name = "Andrew Zhang"
-    person.name = "Kotlin"
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val person = Observable()
+            println(person.name)
+
+            person.name = "Andrew Zhang"
+            person.name = "Kotlin"
+        }
+    }
+
 }

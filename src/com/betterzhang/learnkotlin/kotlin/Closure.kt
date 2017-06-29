@@ -8,17 +8,20 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : Kotlin闭包
  */
 
-val plus = {x: Int, y: Int -> println("$x plus $y is ${x + y}")}
+class Closure {
+    companion object {
+        val plus = {x: Int, y: Int -> println("$x plus $y is ${x + y}")}
 
-val hello = {println("Hello Kotlin")}
+        val hello = {println("Hello Kotlin")}
 
-fun main(args: Array<String>) {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            {x: Int, y: Int ->
+                println("$x plus $y is ${x + y}")
+            }(2, 8)     // 自执行的闭包
 
-    {x: Int, y: Int ->
-        println("$x plus $y is ${x + y}")
-    }(2, 8)     // 自执行的闭包
-
-    plus(2, 8)
-    hello()
-
+            plus(2, 8)
+            hello()
+        }
+    }
 }

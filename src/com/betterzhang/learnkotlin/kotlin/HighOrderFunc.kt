@@ -8,13 +8,16 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : Kotlin高阶函数
  */
 
-fun main(args: Array<String>) {
-
-    // 使用高阶函数
-    superFun("这是一个高阶函数", ::argFun)
-    superFun("这是一个高阶函数", { argFun()})
-    superFun("这是一个高阶函数") { argFun()}
-
+class HighOrderFunc {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            // 使用高阶函数
+            superFun("这是一个高阶函数", ::argFun)
+            superFun("这是一个高阶函数", { argFun()})
+            superFun("这是一个高阶函数") { argFun()}
+        }
+    }
 }
 
 fun argFun() = " 我是高阶函数的参数"

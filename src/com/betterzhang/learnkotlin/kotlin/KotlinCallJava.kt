@@ -10,7 +10,12 @@ import com.betterzhang.learnkotlin.java.Person
  * Desc   : description
  */
 
-fun main(args: Array<String>) {
-    var p = Person("Andrew Zhang", 25)
-    println(p.toString())
+class KotlinCallJava {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            var p = Person("Andrew Zhang", 25)
+            println(p.toString())
+        }
+    }
 }

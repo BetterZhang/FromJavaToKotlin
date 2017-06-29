@@ -8,11 +8,11 @@ package com.betterzhang.learnkotlin.kotlin
  * Desc   : 匿名内部类
  */
 
-interface OnClickListener {
-    fun onClick()
-}
-
 class View {
+
+    interface OnClickListener {
+        fun onClick()
+    }
 
     var listener: OnClickListener? = null
 
@@ -20,13 +20,16 @@ class View {
         this.listener = listener
     }
 
-}
-
-fun main(args: Array<String>) {
-    val view = View()
-    view.setOnClickListener(object: OnClickListener {
-        override fun onClick() {
-            TODO("not implemented")
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val view = View()
+            view.setOnClickListener(object: OnClickListener {
+                override fun onClick() {
+                    TODO("not implemented")
+                }
+            })
         }
-    })
+    }
+
 }

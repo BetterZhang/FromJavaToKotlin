@@ -9,16 +9,21 @@ package com.betterzhang.learnkotlin.kotlin
  */
 class MyClass {
     fun foo() = println("member")
-}
 
-fun MyClass.bar() = println("extension")
+    companion object {
 
-fun MyClass.foo() = println("extension foo")
+        fun MyClass.bar() = println("extension")
 
-fun MyClass.foo(para: Int) = println("extension foo Int")
+        fun MyClass.foo() = println("extension foo")
 
-fun main(args: Array<String>) {
-    MyClass().bar()
-    MyClass().foo()     // 扩展函数与成员函数相同时，成员函数优先
-    MyClass().foo(10)
+        fun MyClass.foo(para: Int) = println("extension foo Int")
+
+        @JvmStatic
+        fun main(args: Array<String>) {
+            MyClass().bar()
+            MyClass().foo()     // 扩展函数与成员函数相同时，成员函数优先
+            MyClass().foo(10)
+        }
+    }
+
 }

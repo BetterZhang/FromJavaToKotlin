@@ -23,9 +23,12 @@ class Outer {
         fun foo() = bar
     }
 
-}
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            println(Outer.Nested().foo())
+            println(Outer().Inner().foo())
+        }
+    }
 
-fun main(args: Array<String>) {
-    println(Outer.Nested().foo())
-    println(Outer().Inner().foo())
 }
